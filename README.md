@@ -3,7 +3,7 @@ Slim Framework 2.6.3
 
 Learn more about it in its [documentation](https://www.slimframework.com/docs/v2/).
 
-A fork for modern days [![Build Status](https://www.travis-ci.com/gnutix/jms-serializer-1.x.svg?branch=master)](https://www.travis-ci.com/gnutix/jms-serializer-1.x)
+A fork for modern days [![Build Status](https://travis-ci.com/gnutix/slim-2.x.svg?branch=2.x)](https://travis-ci.com/gnutix/slim-2.x)
 ==========
 
 This is a fork of `slim/slim` at the version `2.6.3` adapted for modern PHP development, which supports :

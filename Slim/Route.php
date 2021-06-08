@@ -86,7 +86,7 @@ class Route
     protected $methods = array();
 
     /**
-     * @var array[Callable] Middleware to be run before only this route instance
+     * @var Callable[] Middleware to be run before only this route instance
      */
     protected $middleware = array();
 
@@ -321,7 +321,7 @@ class Route
 
     /**
      * Get middleware
-     * @return array[Callable]
+     * @return Callable[]
      */
     public function getMiddleware()
     {
@@ -338,7 +338,7 @@ class Route
      * with `$this->middleware`.  Each middleware is checked for is_callable()
      * and an InvalidArgumentException is thrown immediately if it isn't.
      *
-     * @param  Callable|array[Callable]
+     * @param  Callable|Callable[] $middleware
      * @return \Slim\Route
      * @throws \InvalidArgumentException If argument is not callable or not an array of callables.
      */

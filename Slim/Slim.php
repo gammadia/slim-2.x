@@ -431,7 +431,7 @@ class Slim
      *
      * Slim::get('/foo'[, middleware, middleware, ...], callable);
      *
-     * @param   array (See notes above)
+     * @param   array $args (See notes above)
      * @return  \Slim\Route
      */
     protected function mapRoute($args)
@@ -1185,8 +1185,7 @@ class Slim
 
     /**
      * Invoke hook
-     * @param  string $name The hook name
-     * @param  mixed  ...   (Optional) Argument(s) for hooked functions, can specify multiple arguments
+     * @param  string $name,... The hook name. (Optional) Argument(s) for hooked functions, can specify multiple arguments
      */
     public function applyHook($name)
     {
@@ -1262,7 +1261,7 @@ class Slim
      * This method prepends new middleware to the application middleware stack.
      * The argument must be an instance that subclasses Slim_Middleware.
      *
-     * @param \Slim\Middleware
+     * @param \Slim\Middleware $newMiddleware
      */
     public function add(\Slim\Middleware $newMiddleware)
     {

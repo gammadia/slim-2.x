@@ -392,7 +392,7 @@ class Util
      * This method will parse the HTTP request's `Cookie` header
      * and extract cookies into an associative array.
      *
-     * @param  string
+     * @param  string $header
      * @return array
      */
     public static function parseCookieHeader($header)

@@ -1,0 +1,1722 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to function is_null\\(\\) with Slim\\\\Environment will always evaluate to false\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Class Slim\\\\Environment implements generic interface ArrayAccess but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Class Slim\\\\Environment implements generic interface IteratorAggregate but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:__construct\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:getInstance\\(\\) return type has no value type specified in iterable type Slim\\\\Environment\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:getIterator\\(\\) return type with generic class ArrayIterator does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:mock\\(\\) has parameter \\$userSettings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:mock\\(\\) return type has no value type specified in iterable type Slim\\\\Environment\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:offsetExists\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:offsetGet\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:offsetGet\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:offsetSet\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:offsetSet\\(\\) has parameter \\$value with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Method Slim\\\\Environment\\:\\:offsetUnset\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Property Slim\\\\Environment\\:\\:\\$environment type has no value type specified in iterable type Slim\\\\Environment\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Property Slim\\\\Environment\\:\\:\\$properties type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Class Slim\\\\Helper\\\\Set implements generic interface ArrayAccess but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Class Slim\\\\Helper\\\\Set implements generic interface IteratorAggregate but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:__construct\\(\\) has parameter \\$items with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:__get\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:__get\\(\\) has parameter \\$key with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:__isset\\(\\) has parameter \\$key with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:__set\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:__set\\(\\) has parameter \\$key with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:__set\\(\\) has parameter \\$value with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:__unset\\(\\) has parameter \\$key with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:all\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:clear\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:getIterator\\(\\) return type has no value type specified in iterable type Traversable\\<mixed, mixed\\>\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:keys\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:offsetExists\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:offsetGet\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:offsetGet\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:offsetSet\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:offsetSet\\(\\) has parameter \\$value with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:offsetUnset\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:remove\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:replace\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:replace\\(\\) has parameter \\$items with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Helper\\\\Set\\:\\:set\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Property Slim\\\\Helper\\\\Set\\:\\:\\$data type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Helper/Set.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Cookies\\:\\:remove\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Cookies.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Cookies\\:\\:remove\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Cookies.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Cookies\\:\\:set\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Cookies.php
+
+		-
+			message: "#^Property Slim\\\\Http\\\\Cookies\\:\\:\\$defaults type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Cookies.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Headers\\:\\:extract\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Headers.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Headers\\:\\:extract\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Headers.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function ucwords expects string, string\\|null given\\.$#"
+			count: 1
+			path: Slim/Http/Headers.php
+
+		-
+			message: "#^Property Slim\\\\Http\\\\Headers\\:\\:\\$special type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Headers.php
+
+		-
+			message: "#^Cannot access offset 0 on array\\<int, string\\>\\|false\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Cannot access offset int on array\\<int, string\\>\\|false\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Request\\:\\:__construct\\(\\) has parameter \\$env with no value type specified in iterable type Slim\\\\Environment\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Request\\:\\:cookies\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Request\\:\\:cookies\\(\\) should return array\\|string\\|null but returns Slim\\\\Helper\\\\Set\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Request\\:\\:getMediaTypeParams\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Parameter \\#1 \\$data of static method Slim\\\\Http\\\\Headers\\:\\:extract\\(\\) expects array, Slim\\\\Environment given\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Property Slim\\\\Http\\\\Request\\:\\:\\$cookies type has no value type specified in iterable type Slim\\\\Helper\\\\Set\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Property Slim\\\\Http\\\\Request\\:\\:\\$env type has no value type specified in iterable type Slim\\\\Environment\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Property Slim\\\\Http\\\\Request\\:\\:\\$formDataMediaTypes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Property Slim\\\\Http\\\\Request\\:\\:\\$headers type has no value type specified in iterable type Slim\\\\Http\\\\Headers\\.$#"
+			count: 1
+			path: Slim/Http/Request.php
+
+		-
+			message: "#^Class Slim\\\\Http\\\\Response implements generic interface ArrayAccess but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Class Slim\\\\Http\\\\Response implements generic interface IteratorAggregate but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:__construct\\(\\) has parameter \\$headers with no value type specified in iterable type array\\|Slim\\\\Http\\\\Headers\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:deleteCookie\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:deleteCookie\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:finalize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:getBody\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:getIterator\\(\\) return type has no value type specified in iterable type Slim\\\\Http\\\\Headers\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:getIterator\\(\\) should return Slim\\\\Http\\\\Headers but returns Traversable\\<mixed, mixed\\>\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:getLength\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:getStatus\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:headers\\(\\) return type has no value type specified in iterable type Slim\\\\Http\\\\Headers\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:offsetExists\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:offsetGet\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:offsetGet\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:offsetSet\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:offsetSet\\(\\) has parameter \\$value with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:offsetUnset\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:redirect\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:setBody\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:setBody\\(\\) has parameter \\$content with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:setCookie\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:setCookie\\(\\) has parameter \\$value with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:setStatus\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Response\\:\\:setStatus\\(\\) has parameter \\$status with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Parameter \\#1 \\$items of method Slim\\\\Helper\\\\Set\\:\\:replace\\(\\) expects array, array\\|Slim\\\\Http\\\\Headers given\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Property Slim\\\\Http\\\\Response\\:\\:\\$cookies type has no value type specified in iterable type Slim\\\\Http\\\\Cookies\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Property Slim\\\\Http\\\\Response\\:\\:\\$headers type has no value type specified in iterable type Slim\\\\Http\\\\Headers\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Property Slim\\\\Http\\\\Response\\:\\:\\$messages type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Response.php
+
+		-
+			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Call to function is_array\\(\\) with string will always evaluate to false\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Function get_magic_quotes_gpc not found\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:decrypt\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:deleteCookieHeader\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:deleteCookieHeader\\(\\) has parameter \\$header with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:deleteCookieHeader\\(\\) has parameter \\$value with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:encrypt\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:parseCookieHeader\\(\\) has parameter \\$header with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:parseCookieHeader\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:serializeCookies\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:serializeCookies\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:serializeCookies\\(\\) has parameter \\$cookies with no value type specified in iterable type Slim\\\\Http\\\\Cookies\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:serializeCookies\\(\\) has parameter \\$headers with no value type specified in iterable type Slim\\\\Http\\\\Headers\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:setCookieHeader\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:setCookieHeader\\(\\) has parameter \\$header with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:stripSlashes\\(\\) has parameter \\$rawData with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:stripSlashes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:stripSlashesIfMagicQuotes\\(\\) has parameter \\$rawData with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Http\\\\Util\\:\\:stripSlashesIfMagicQuotes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(string\\)\\: Unexpected token \"\\\\n     \\* \", expected variable at offset 185$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(\\)\\: mixed\\)\\|null, array\\('self', 'stripSlashes'\\) given\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#1 \\$expires of static method Slim\\\\Http\\\\Util\\:\\:getIv\\(\\) expects int, string given\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#1 \\$td of function mcrypt_enc_get_iv_size expects resource, resource\\|false given\\.$#"
+			count: 2
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#1 \\$td of function mcrypt_enc_get_key_size expects resource, resource\\|false given\\.$#"
+			count: 2
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#1 \\$td of function mcrypt_generic expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#1 \\$td of function mcrypt_generic_deinit expects resource, resource\\|false given\\.$#"
+			count: 2
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#1 \\$td of function mcrypt_generic_init expects resource, resource\\|false given\\.$#"
+			count: 2
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#1 \\$td of function mdecrypt_generic expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#2 \\$expires of static method Slim\\\\Http\\\\Util\\:\\:encodeSecureCookie\\(\\) expects int, int\\|false given\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#2 \\$timestamp of function gmdate expects int\\|null, int\\<min, \\-1\\>\\|int\\<1, max\\>\\|false given\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Parameter \\#3 \\$value of static method Slim\\\\Http\\\\Util\\:\\:setCookieHeader\\(\\) expects string, array given\\.$#"
+			count: 1
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Result of && is always false\\.$#"
+			count: 4
+			path: Slim/Http/Util.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:alert\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:critical\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:debug\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:emergency\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:error\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:fatal\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:info\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:interpolate\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:log\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:notice\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:setEnabled\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:setLevel\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:setWriter\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:warn\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Log\\:\\:warning\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Property Slim\\\\Log\\:\\:\\$levels type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Log.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\:\\:call\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\:\\:setApplication\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\:\\:setNextMiddleware\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\:\\:setNextMiddleware\\(\\) has parameter \\$nextMiddleware with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\\\Slim\\|\\\\Slim\\\\Middleware\\)\\: Unexpected token \"\\\\n     \", expected variable at offset 228$#"
+			count: 1
+			path: Slim/Middleware.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\ContentTypes\\:\\:__construct\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/ContentTypes.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\ContentTypes\\:\\:call\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/ContentTypes.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\ContentTypes\\:\\:parseCsv\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/ContentTypes.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\ContentTypes\\:\\:parseJson\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/ContentTypes.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\ContentTypes\\:\\:parseJson\\(\\) should return array\\|string but return statement is missing\\.$#"
+			count: 1
+			path: Slim/Middleware/ContentTypes.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function fclose expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: Slim/Middleware/ContentTypes.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function fgetcsv expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: Slim/Middleware/ContentTypes.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function fseek expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: Slim/Middleware/ContentTypes.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function fwrite expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: Slim/Middleware/ContentTypes.php
+
+		-
+			message: "#^Property Slim\\\\Middleware\\\\ContentTypes\\:\\:\\$contentTypes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/ContentTypes.php
+
+		-
+			message: "#^Class Slim\\\\Middleware\\\\Flash implements generic interface ArrayAccess but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Class Slim\\\\Middleware\\\\Flash implements generic interface IteratorAggregate but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:__construct\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:call\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:getIterator\\(\\) return type with generic class ArrayIterator does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:getMessages\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:keep\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:loadMessages\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:now\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:offsetExists\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:offsetGet\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:offsetGet\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:offsetSet\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:offsetSet\\(\\) has parameter \\$value with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:offsetUnset\\(\\) has parameter \\$offset with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:save\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\Flash\\:\\:set\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Property Slim\\\\Middleware\\\\Flash\\:\\:\\$messages type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Property Slim\\\\Middleware\\\\Flash\\:\\:\\$settings type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/Flash.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\MethodOverride\\:\\:__construct\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/MethodOverride.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\MethodOverride\\:\\:call\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/MethodOverride.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\MethodOverride\\:\\:call\\(\\) should return array but return statement is missing\\.$#"
+			count: 1
+			path: Slim/Middleware/MethodOverride.php
+
+		-
+			message: "#^Property Slim\\\\Middleware\\\\MethodOverride\\:\\:\\$settings type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/MethodOverride.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\PrettyExceptions\\:\\:__construct\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/PrettyExceptions.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\PrettyExceptions\\:\\:call\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/PrettyExceptions.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\PrettyExceptions\\:\\:renderBody\\(\\) has parameter \\$env with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/PrettyExceptions.php
+
+		-
+			message: "#^Property Slim\\\\Middleware\\\\PrettyExceptions\\:\\:\\$settings type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/PrettyExceptions.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:__construct\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:call\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:close\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:destroy\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:destroy\\(\\) has parameter \\$id with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:gc\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:gc\\(\\) has parameter \\$maxlifetime with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:loadSession\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:open\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:open\\(\\) has parameter \\$savePath with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:open\\(\\) has parameter \\$sessionName with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:read\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:read\\(\\) has parameter \\$id with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:saveSession\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:write\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:write\\(\\) has parameter \\$data with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Middleware\\\\SessionCookie\\:\\:write\\(\\) has parameter \\$id with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function strlen expects string, string\\|false given\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function session_cache_limiter expects string\\|null, false given\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Parameter \\#2 \\$value of function ini_set expects string, int given\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Parameter \\#2 \\$value of method Slim\\\\Slim\\:\\:setCookie\\(\\) expects string, string\\|false given\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Property Slim\\\\Middleware\\\\SessionCookie\\:\\:\\$settings type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Middleware/SessionCookie.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:appendHttpMethods\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:conditions\\(\\) has parameter \\$conditions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:getConditions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:getDefaultConditions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:getHttpMethods\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:getMiddleware\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:getParams\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:matchesCallback\\(\\) has parameter \\$m with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setCallable\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setConditions\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setConditions\\(\\) has parameter \\$conditions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setDefaultConditions\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setDefaultConditions\\(\\) has parameter \\$defaultConditions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setHttpMethods\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setMiddleware\\(\\) has parameter \\$middleware with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setName\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setParam\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setParams\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setParams\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Method Slim\\\\Route\\:\\:setPattern\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(Callable\\|array\\[Callable\\]\\)\\: Unexpected token \"\\[\", expected variable at offset 513$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Property Slim\\\\Route\\:\\:\\$conditions type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Property Slim\\\\Route\\:\\:\\$defaultConditions type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Property Slim\\\\Route\\:\\:\\$methods type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Property Slim\\\\Route\\:\\:\\$middleware type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Property Slim\\\\Route\\:\\:\\$paramNames type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Property Slim\\\\Route\\:\\:\\$paramNamesPath type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Property Slim\\\\Route\\:\\:\\$params type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Route.php
+
+		-
+			message: "#^Call to function is_null\\(\\) with array will always evaluate to false\\.$#"
+			count: 2
+			path: Slim/Router.php
+
+		-
+			message: "#^Cannot call method getPattern\\(\\) on Slim\\\\Route\\|null\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Method Slim\\\\Router\\:\\:addNamedRoute\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Method Slim\\\\Router\\:\\:getMatchedRoutes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Method Slim\\\\Router\\:\\:getNamedRoutes\\(\\) return type with generic class ArrayIterator does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Method Slim\\\\Router\\:\\:map\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Method Slim\\\\Router\\:\\:processGroups\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Method Slim\\\\Router\\:\\:pushGroup\\(\\) has parameter \\$middleware with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Method Slim\\\\Router\\:\\:urlFor\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Method Slim\\\\Router\\:\\:urlFor\\(\\) should return string but returns string\\|null\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Parameter \\#3 \\$subject of function preg_replace expects array\\|string, string\\|null given\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Property Slim\\\\Router\\:\\:\\$matchedRoutes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Property Slim\\\\Router\\:\\:\\$namedRoutes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Property Slim\\\\Router\\:\\:\\$routeGroups type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Property Slim\\\\Router\\:\\:\\$routes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Router.php
+
+		-
+			message: "#^Access to an undefined property Slim\\\\Slim\\:\\:\\$log\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Access to an undefined property Slim\\\\Slim\\:\\:\\$mode\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Access to an undefined property Slim\\\\Slim\\:\\:\\$settings\\.$#"
+			count: 2
+			path: Slim/Slim.php
+
+		-
+			message: "#^Access to an undefined property Slim\\\\Slim\\:\\:\\$view\\.$#"
+			count: 4
+			path: Slim/Slim.php
+
+		-
+			message: "#^Default value of the parameter \\#4 \\$errline \\(string\\) of method Slim\\\\Slim\\:\\:handleErrors\\(\\) is incompatible with type int\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:__construct\\(\\) has parameter \\$userSettings with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:__get\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:__get\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:__isset\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:__set\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:__set\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:__set\\(\\) has parameter \\$value with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:__unset\\(\\) has parameter \\$name with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:add\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:any\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:applyHook\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:autoload\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:autoload\\(\\) has parameter \\$className with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:call\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:callErrorHandler\\(\\) should return string but returns string\\|false\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:cleanBuffer\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:clearHooks\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:config\\(\\) has parameter \\$name with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:contentType\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:defaultError\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:defaultError\\(\\) has parameter \\$e with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:defaultNotFound\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:deleteCookie\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:environment\\(\\) return type has no value type specified in iterable type Slim\\\\Environment\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:error\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:etag\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:expires\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:flash\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:flashData\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:flashKeep\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:flashNow\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:getDefaultSettings\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:getEncryptedCookie\\(\\) should return bool\\|string but returns string\\|null\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:getHooks\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:group\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:halt\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:handleErrors\\(\\) should return bool but empty return statement found\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:hook\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:lastModified\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:mapRoute\\(\\) has parameter \\$args with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:notFound\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:pass\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:redirect\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:redirectTo\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:redirectTo\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:redirectTo\\(\\) has parameter \\$status with no typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:registerAutoloader\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:render\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:render\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:response\\(\\) return type has no value type specified in iterable type Slim\\\\Http\\\\Response\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:run\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:setCookie\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:setEncryptedCookie\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:setName\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:status\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:stop\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Method Slim\\\\Slim\\:\\:urlFor\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(\\\\Slim\\\\Middleware\\)\\: Unexpected token \"\\\\n     \", expected variable at offset 223$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(array \\(See notes above\\)\\)\\: Unexpected token \"\\(\", expected variable at offset 1073$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^PHPDoc tag @param has invalid value \\(mixed  \\.\\.\\.   \\(Optional\\) Argument\\(s\\) for hooked functions, can specify multiple arguments\\)\\: Unexpected token \"\\(\", expected variable at offset 93$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Parameter \\#1 \\$body of method Slim\\\\Http\\\\Response\\:\\:write\\(\\) expects string, string\\|false given\\.$#"
+			count: 2
+			path: Slim/Slim.php
+
+		-
+			message: "#^Parameter \\#2 \\$haystack of function in_array expects array, array\\<int, string\\>\\|false given\\.$#"
+			count: 2
+			path: Slim/Slim.php
+
+		-
+			message: "#^Parameter \\#2 \\$message of method Slim\\\\Slim\\:\\:halt\\(\\) expects string, string\\|false given\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Parameter \\#2 \\$timestamp of function gmdate expects int\\|null, int\\|false given\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Property Slim\\\\Slim\\:\\:\\$apps type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Property Slim\\\\Slim\\:\\:\\$container type has no value type specified in iterable type Slim\\\\Helper\\\\Set\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Property Slim\\\\Slim\\:\\:\\$hooks type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Property Slim\\\\Slim\\:\\:\\$middleware type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
+			message: "#^Call to an undefined method Slim\\\\Helper\\\\Set\\:\\:keep\\(\\)\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:all\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:appendData\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:appendData\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:clear\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:display\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:display\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:fetch\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:getData\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:getData\\(\\) has parameter \\$key with no typehint specified\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:keep\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:render\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:render\\(\\) should return string but returns string\\|false\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:replace\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:replace\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:set\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:setData\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Method Slim\\\\View\\:\\:setTemplatesDirectory\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^PHPDoc tag @param for parameter \\$value with type mixed is not subtype of native type Closure\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Parameter \\#1 \\$callable of method Slim\\\\Helper\\\\Set\\:\\:protect\\(\\) expects Closure, object given\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Property Slim\\\\View\\:\\:\\$data type has no value type specified in iterable type Slim\\\\Helper\\\\Set\\.$#"
+			count: 1
+			path: Slim/View.php
+
+		-
+			message: "#^Function customAutoLoader\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: tests/bootstrap.php
+
+		-
+			message: "#^Function customAutoLoader\\(\\) has parameter \\$class with no typehint specified\\.$#"
+			count: 1
+			path: tests/bootstrap.php
+
+		-
+			message: "#^Variable \\$foo might not be defined\\.$#"
+			count: 1
+			path: tests/templates/test.php
+

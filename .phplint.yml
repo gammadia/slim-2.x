@@ -1,0 +1,5 @@
+path: ./
+cache: var/cache/phplint/result.cache
+exclude:
+    - var
+    - vendor

@@ -44,6 +44,8 @@ class SessionCookieTest extends \PHPUnit\Framework\TestCase
      *
      * 1) That the HTTP cookie exists with the correct name;
      * 2) That the HTTP cookie's value is the expected value;
+     *
+     * @runInSeparateProcess
      */
     public function testSessionCookieIsCreated(): void
     {
@@ -99,6 +101,8 @@ class SessionCookieTest extends \PHPUnit\Framework\TestCase
      *
      * The unencrypted cookie contains the serialized array ['foo' => 'bar'].
      * The global cookies.encrypt setting is set to false
+     *
+     * @runInSeparateProcess
      */
     public function testSessionIsPopulatedFromUnencryptedCookie(): void
     {
@@ -126,6 +130,8 @@ class SessionCookieTest extends \PHPUnit\Framework\TestCase
      *
      * The unencrypted cookie contains the serialized array ['foo' => 'bar'].
      * The global cookies.encrypt setting is set to false
+     *
+     * @runInSeparateProcess
      */
     public function testSessionIsPopulatedFromMalformedCookieData(): void
     {
@@ -150,6 +156,8 @@ class SessionCookieTest extends \PHPUnit\Framework\TestCase
 
     /**
      * Test $_SESSION is populated as empty array if no HTTP cookie
+     *
+     * @runInSeparateProcess
      */
     public function testSessionIsPopulatedAsEmptyIfNoCookie(): void
     {
@@ -168,6 +176,9 @@ class SessionCookieTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(array(), $_SESSION);
     }
 
+    /**
+     * @runInSeparateProcess
+     */
     public function testSerializingTooLongValueWritesLogAndDoesntCreateCookie(): void
     {
         \Slim\Environment::mock(array(

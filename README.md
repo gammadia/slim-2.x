@@ -15,4 +15,4 @@ The following changes were applied to the dev dependencies :
 * PHPUnit upgraded to 8.x
 * PHPStan baseline added to keep the code in good health
 * Rector installed to ease automated refactorings
-* Migrate Travis CI to GitHub Actions
+* Add GitHub Actions for continuous integration

@@ -30,12 +30,12 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class SlimFlashTest extends PHPUnit_Framework_TestCase
+class SlimFlashTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Setup
      */
-    public function setUp()
+    protected function setUp(): void
     {
         $_SESSION = array();
     }
@@ -43,7 +43,7 @@ class SlimFlashTest extends PHPUnit_Framework_TestCase
     /**
      * Test set flash message for next request
      */
-    public function testSetFlashForNextRequest()
+    public function testSetFlashForNextRequest(): void
     {
         $f = new \Slim\Middleware\Flash();
         $f->set('foo', 'bar');
@@ -54,7 +54,7 @@ class SlimFlashTest extends PHPUnit_Framework_TestCase
     /**
      * Test set flash message for current request
      */
-    public function testSetFlashForCurrentRequest()
+    public function testSetFlashForCurrentRequest(): void
     {
         $f = new \Slim\Middleware\Flash();
         $f->now('foo', 'bar');
@@ -64,7 +64,7 @@ class SlimFlashTest extends PHPUnit_Framework_TestCase
     /**
      * Test loads flash from previous request
      */
-    public function testLoadsFlashFromPreviousRequest()
+    public function testLoadsFlashFromPreviousRequest(): void
     {
         $_SESSION['slim.flash'] = array('info' => 'foo');
         $f = new \Slim\Middleware\Flash();
@@ -75,7 +75,7 @@ class SlimFlashTest extends PHPUnit_Framework_TestCase
     /**
      * Test keep flash message for next request
      */
-    public function testKeepFlashFromPreviousRequest()
+    public function testKeepFlashFromPreviousRequest(): void
     {
         $_SESSION['slim.flash'] = array('info' => 'foo');
         $f = new \Slim\Middleware\Flash();
@@ -88,7 +88,7 @@ class SlimFlashTest extends PHPUnit_Framework_TestCase
     /**
      * Test flash messages from previous request do not persist to next request
      */
-    public function testFlashMessagesFromPreviousRequestDoNotPersist()
+    public function testFlashMessagesFromPreviousRequestDoNotPersist(): void
     {
         $_SESSION['slim.flash'] = array('info' => 'foo');
         $f = new \Slim\Middleware\Flash();
@@ -99,7 +99,7 @@ class SlimFlashTest extends PHPUnit_Framework_TestCase
     /**
      * Test set Flash using array access
      */
-    public function testFlashArrayAccess()
+    public function testFlashArrayAccess(): void
     {
         $_SESSION['slim.flash'] = array('info' => 'foo');
         $f = new \Slim\Middleware\Flash();
@@ -114,7 +114,7 @@ class SlimFlashTest extends PHPUnit_Framework_TestCase
     /**
      * Test iteration
      */
-    public function testIteration()
+    public function testIteration(): void
     {
         $_SESSION['slim.flash'] = array('info' => 'foo', 'error' => 'bar');
         $f = new \Slim\Middleware\Flash();
@@ -129,10 +129,10 @@ class SlimFlashTest extends PHPUnit_Framework_TestCase
     /**
      * Test countable
      */
-    public function testCountable()
+    public function testCountable(): void
     {
         $_SESSION['slim.flash'] = array('info' => 'foo', 'error' => 'bar');
-        $f = new \Slim\MiddleWare\Flash();
+        $f = new \Slim\Middleware\Flash();
         $f->loadMessages();
         $this->assertEquals(2, count($f));
     }

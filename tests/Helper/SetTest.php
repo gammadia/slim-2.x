@@ -30,19 +30,19 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class SetTest extends PHPUnit_Framework_TestCase
+class SetTest extends \PHPUnit\Framework\TestCase
 {
     protected $bag;
     protected $property;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->bag = new \Slim\Helper\Set();
         $this->property = new \ReflectionProperty($this->bag, 'data');
         $this->property->setAccessible(true);
     }
 
-    public function testSet()
+    public function testSet(): void
     {
         $this->bag->set('foo', 'bar');
         $this->assertArrayHasKey('foo', $this->property->getValue($this->bag));
@@ -50,19 +50,19 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('bar', $bag['foo']);
     }
 
-    public function testGet()
+    public function testGet(): void
     {
         $this->property->setValue($this->bag, array('foo' => 'bar'));
         $this->assertEquals('bar', $this->bag->get('foo'));
     }
 
-    public function testGetNotExists()
+    public function testGetNotExists(): void
     {
         $this->property->setValue($this->bag, array('foo' => 'bar'));
         $this->assertEquals('default', $this->bag->get('abc', 'default'));
     }
 
-    public function testAdd()
+    public function testAdd(): void
     {
         $this->bag->replace(array(
             'abc' => '123',
@@ -75,7 +75,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('bar', $bag['foo']);
     }
 
-    public function testAll()
+    public function testAll(): void
     {
         $data = array(
             'abc' => '123',
@@ -85,7 +85,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($data, $this->bag->all());
     }
 
-    public function testKeys()
+    public function testKeys(): void
     {
         $data = array(
             'abc' => '123',
@@ -95,7 +95,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('abc', 'foo'), $this->bag->keys());
     }
 
-    public function testRemove()
+    public function testRemove(): void
     {
         $data = array(
             'abc' => '123',
@@ -106,7 +106,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('abc' => '123'), $this->property->getValue($this->bag));
     }
 
-    public function testClear()
+    public function testClear(): void
     {
         $data = array(
             'abc' => '123',
@@ -117,7 +117,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array(), $this->property->getValue($this->bag));
     }
 
-    public function testArrayAccessGet()
+    public function testArrayAccessGet(): void
     {
         $data = array(
             'abc' => '123',
@@ -127,7 +127,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('bar', $this->bag['foo']);
     }
 
-    public function testArrayAccessSet()
+    public function testArrayAccessSet(): void
     {
         $data = array(
             'abc' => '123',
@@ -139,7 +139,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('changed', $bag['foo']);
     }
 
-    public function testArrayAccessExists()
+    public function testArrayAccessExists(): void
     {
         $data = array(
             'abc' => '123',
@@ -150,7 +150,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertFalse(isset($this->bag['bar']));
     }
 
-    public function testArrayAccessUnset()
+    public function testArrayAccessUnset(): void
     {
         $data = array(
             'abc' => '123',
@@ -161,7 +161,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('abc' => '123'), $this->property->getValue($this->bag));
     }
 
-    public function testCount()
+    public function testCount(): void
     {
         $data = array(
             'abc' => '123',
@@ -171,7 +171,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(2, count($this->bag));
     }
 
-    public function testGetIterator()
+    public function testGetIterator(): void
     {
         $data = array(
             'abc' => '123',
@@ -181,7 +181,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\ArrayIterator', $this->bag->getIterator());
     }
 
-    public function testPropertyOverloadGet()
+    public function testPropertyOverloadGet(): void
     {
         $data = array(
             'abc' => '123',
@@ -193,14 +193,14 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('bar', $this->bag->foo);
     }
 
-    public function testPropertyOverloadSet()
+    public function testPropertyOverloadSet(): void
     {
         $this->bag->foo = 'bar';
         $this->assertArrayHasKey('foo', $this->property->getValue($this->bag));
         $this->assertEquals('bar', $this->bag->foo);
     }
 
-    public function testPropertyOverloadingIsset()
+    public function testPropertyOverloadingIsset(): void
     {
         $data = array(
             'abc' => '123',
@@ -213,7 +213,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertFalse(isset($this->bag->foobar));
     }
 
-    public function testPropertyOverloadingUnset()
+    public function testPropertyOverloadingUnset(): void
     {
         $data = array(
             'abc' => '123',
@@ -228,7 +228,7 @@ class SetTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('foo', $this->property->getValue($this->bag));
     }
 
-    public function testProtect()
+    public function testProtect(): void
     {
         $callable = function () {
             return 'foo';

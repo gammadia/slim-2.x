@@ -54,12 +54,12 @@ class CustomAppMethod
     }
 }
 
-class MethodOverrideTest extends PHPUnit_Framework_TestCase
+class MethodOverrideTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Test overrides method as POST
      */
-    public function testOverrideMethodAsPost()
+    public function testOverrideMethodAsPost(): void
     {
         \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'POST',
@@ -81,7 +81,7 @@ class MethodOverrideTest extends PHPUnit_Framework_TestCase
     /**
      * Test does not override method if not POST
      */
-    public function testDoesNotOverrideMethodIfNotPost()
+    public function testDoesNotOverrideMethodIfNotPost(): void
     {
         \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'GET',
@@ -100,7 +100,7 @@ class MethodOverrideTest extends PHPUnit_Framework_TestCase
     /**
      * Test does not override method if no method override parameter
      */
-    public function testDoesNotOverrideMethodAsPostWithoutParameter()
+    public function testDoesNotOverrideMethodAsPostWithoutParameter(): void
     {
         \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'POST',
@@ -127,7 +127,7 @@ class MethodOverrideTest extends PHPUnit_Framework_TestCase
     /**
      * Test overrides method with X-Http-Method-Override header
      */
-    public function testOverrideMethodAsHeader()
+    public function testOverrideMethodAsHeader(): void
     {
         \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'POST',

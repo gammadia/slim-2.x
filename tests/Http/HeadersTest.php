@@ -30,9 +30,9 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class HeadersTest extends PHPUnit_Framework_TestCase
+class HeadersTest extends \PHPUnit\Framework\TestCase
 {
-    public function testNormalizesKey()
+    public function testNormalizesKey(): void
     {
         $h = new \Slim\Http\Headers();
         $h->set('Http_Content_Type', 'text/html');
@@ -41,7 +41,7 @@ class HeadersTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('Content-Type', $prop->getValue($h));
     }
 
-    public function testExtractHeaders()
+    public function testExtractHeaders(): void
     {
         $test = array(
             'HTTP_HOST' => 'foo.com',

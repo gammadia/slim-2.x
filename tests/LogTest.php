@@ -40,9 +40,9 @@ class MyWriter
     }
 }
 
-class LogTest extends PHPUnit_Framework_TestCase
+class LogTest extends \PHPUnit\Framework\TestCase
 {
-    public function testEnabled()
+    public function testEnabled(): void
     {
         $log = new \Slim\Log(new MyWriter());
         $this->assertTrue($log->isEnabled()); //<-- Default case
@@ -52,27 +52,27 @@ class LogTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($log->isEnabled());
     }
 
-    public function testGetLevel()
+    public function testGetLevel(): void
     {
         $log = new \Slim\Log(new MyWriter());
         $this->assertEquals(\Slim\Log::DEBUG, $log->getLevel());
     }
 
-    public function testSetLevel()
+    public function testSetLevel(): void
     {
         $log = new \Slim\Log(new MyWriter());
         $log->setLevel(\Slim\Log::WARN);
         $this->assertEquals(\Slim\Log::WARN, $log->getLevel());
     }
 
-    public function testSetInvalidLevel()
+    public function testSetInvalidLevel(): void
     {
-        $this->setExpectedException('InvalidArgumentException');
+        self::expectException(\InvalidArgumentException::class);
         $log = new \Slim\Log(new MyWriter());
         $log->setLevel(\Slim\Log::DEBUG + 1);
     }
 
-    public function testLogDebug()
+    public function testLogDebug(): void
     {
         $this->expectOutputString('Debug');
         $log = new \Slim\Log(new MyWriter());
@@ -80,14 +80,14 @@ class LogTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    public function testLogDebugExcludedByLevel()
+    public function testLogDebugExcludedByLevel(): void
     {
         $log = new \Slim\Log(new MyWriter());
         $log->setLevel(\Slim\Log::INFO);
         $this->assertFalse($log->debug('Debug'));
     }
 
-    public function testLogInfo()
+    public function testLogInfo(): void
     {
         $this->expectOutputString('Info');
         $log = new \Slim\Log(new MyWriter());
@@ -95,14 +95,14 @@ class LogTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    public function testLogInfoExcludedByLevel()
+    public function testLogInfoExcludedByLevel(): void
     {
         $log = new \Slim\Log(new MyWriter());
         $log->setLevel(\Slim\Log::NOTICE);
         $this->assertFalse($log->info('Info'));
     }
 
-    public function testLogNotice()
+    public function testLogNotice(): void
     {
         $this->expectOutputString('Notice');
         $log = new \Slim\Log(new MyWriter());
@@ -110,14 +110,14 @@ class LogTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    public function testLogNoticeExcludedByLevel()
+    public function testLogNoticeExcludedByLevel(): void
     {
         $log = new \Slim\Log(new MyWriter());
         $log->setLevel(\Slim\Log::WARN);
         $this->assertFalse($log->info('Info'));
     }
 
-    public function testLogWarn()
+    public function testLogWarn(): void
     {
         $this->expectOutputString('Warn');
         $log = new \Slim\Log(new MyWriter());
@@ -125,14 +125,14 @@ class LogTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    public function testLogWarnExcludedByLevel()
+    public function testLogWarnExcludedByLevel(): void
     {
         $log = new \Slim\Log(new MyWriter());
         $log->setLevel(\Slim\Log::ERROR);
         $this->assertFalse($log->warning('Warn'));
     }
 
-    public function testLogError()
+    public function testLogError(): void
     {
         $this->expectOutputString('Error');
         $log = new \Slim\Log(new MyWriter());
@@ -140,14 +140,14 @@ class LogTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    public function testLogErrorExcludedByLevel()
+    public function testLogErrorExcludedByLevel(): void
     {
         $log = new \Slim\Log(new MyWriter());
         $log->setLevel(\Slim\Log::CRITICAL);
         $this->assertFalse($log->error('Error'));
     }
 
-    public function testLogCritical()
+    public function testLogCritical(): void
     {
         $this->expectOutputString('Critical');
         $log = new \Slim\Log(new MyWriter());
@@ -155,14 +155,14 @@ class LogTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    public function testLogCriticalExcludedByLevel()
+    public function testLogCriticalExcludedByLevel(): void
     {
         $log = new \Slim\Log(new MyWriter());
         $log->setLevel(\Slim\Log::ALERT);
         $this->assertFalse($log->critical('Critical'));
     }
 
-    public function testLogAlert()
+    public function testLogAlert(): void
     {
         $this->expectOutputString('Alert');
         $log = new \Slim\Log(new MyWriter());
@@ -170,14 +170,14 @@ class LogTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    public function testLogAlertExcludedByLevel()
+    public function testLogAlertExcludedByLevel(): void
     {
         $log = new \Slim\Log(new MyWriter());
         $log->setLevel(\Slim\Log::EMERGENCY);
         $this->assertFalse($log->alert('Alert'));
     }
 
-    public function testLogEmergency()
+    public function testLogEmergency(): void
     {
         $this->expectOutputString('Emergency');
         $log = new \Slim\Log(new MyWriter());
@@ -185,7 +185,7 @@ class LogTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    public function testInterpolateMessage()
+    public function testInterpolateMessage(): void
     {
         $this->expectOutputString('Hello Slim !');
         $log = new \Slim\Log(new MyWriter());
@@ -196,7 +196,7 @@ class LogTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($result);
     }
 
-    public function testGetAndSetWriter()
+    public function testGetAndSetWriter(): void
     {
         $writer1 = new MyWriter();
         $writer2 = new MyWriter();

@@ -30,9 +30,9 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class SessionCookieTest extends PHPUnit_Framework_TestCase
+class SessionCookieTest extends \PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    protected function setUp(): void
     {
         $_SESSION = array();
     }
@@ -45,7 +45,7 @@ class SessionCookieTest extends PHPUnit_Framework_TestCase
      * 1) That the HTTP cookie exists with the correct name;
      * 2) That the HTTP cookie's value is the expected value;
      */
-    public function testSessionCookieIsCreated()
+    public function testSessionCookieIsCreated(): void
     {
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',
@@ -73,7 +73,7 @@ class SessionCookieTest extends PHPUnit_Framework_TestCase
      * global secret, cipher, and cipher mode are assumed to be the default
      * values.
      */
-    // public function testSessionIsPopulatedFromEncryptedCookie()
+    // public function testSessionIsPopulatedFromEncryptedCookie(): void
     // {
     //     \Slim\Environment::mock(array(
     //         'SCRIPT_NAME' => '/index.php',
@@ -100,7 +100,7 @@ class SessionCookieTest extends PHPUnit_Framework_TestCase
      * The unencrypted cookie contains the serialized array ['foo' => 'bar'].
      * The global cookies.encrypt setting is set to false
      */
-    public function testSessionIsPopulatedFromUnencryptedCookie()
+    public function testSessionIsPopulatedFromUnencryptedCookie(): void
     {
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',
@@ -127,7 +127,7 @@ class SessionCookieTest extends PHPUnit_Framework_TestCase
      * The unencrypted cookie contains the serialized array ['foo' => 'bar'].
      * The global cookies.encrypt setting is set to false
      */
-    public function testSessionIsPopulatedFromMalformedCookieData()
+    public function testSessionIsPopulatedFromMalformedCookieData(): void
     {
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',
@@ -151,7 +151,7 @@ class SessionCookieTest extends PHPUnit_Framework_TestCase
     /**
      * Test $_SESSION is populated as empty array if no HTTP cookie
      */
-    public function testSessionIsPopulatedAsEmptyIfNoCookie()
+    public function testSessionIsPopulatedAsEmptyIfNoCookie(): void
     {
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',
@@ -168,7 +168,7 @@ class SessionCookieTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array(), $_SESSION);
     }
 
-    public function testSerializingTooLongValueWritesLogAndDoesntCreateCookie()
+    public function testSerializingTooLongValueWritesLogAndDoesntCreateCookie(): void
     {
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',

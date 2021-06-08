@@ -30,12 +30,12 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class RequestTest extends PHPUnit_Framework_TestCase
+class RequestTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Test sets HTTP method
      */
-    public function testGetMethod()
+    public function testGetMethod(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'GET'
@@ -47,7 +47,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test HTTP GET method detection
      */
-    public function testIsGet()
+    public function testIsGet(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'GET'
@@ -59,7 +59,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test HTTP POST method detection
      */
-    public function testIsPost()
+    public function testIsPost(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'POST',
@@ -71,7 +71,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test HTTP PUT method detection
      */
-    public function testIsPut()
+    public function testIsPut(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'PUT',
@@ -83,7 +83,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test HTTP DELETE method detection
      */
-    public function testIsDelete()
+    public function testIsDelete(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'DELETE',
@@ -95,7 +95,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test HTTP OPTIONS method detection
      */
-    public function testIsOptions()
+    public function testIsOptions(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'OPTIONS',
@@ -107,7 +107,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test HTTP HEAD method detection
      */
-    public function testIsHead()
+    public function testIsHead(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'HEAD',
@@ -119,7 +119,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test HTTP PATCH method detection
      */
-    public function testIsPatch()
+    public function testIsPatch(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'PATCH',
@@ -131,7 +131,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test AJAX method detection w/ header
      */
-    public function testIsAjaxWithHeader()
+    public function testIsAjaxWithHeader(): void
     {
         $env = \Slim\Environment::mock(array(
             'X_REQUESTED_WITH' => 'XMLHttpRequest'
@@ -144,7 +144,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test AJAX method detection w/ query parameter
      */
-    public function testIsAjaxWithQueryParameter()
+    public function testIsAjaxWithQueryParameter(): void
     {
         $env = \Slim\Environment::mock(array(
             'QUERY_STRING' => 'isajax=1',
@@ -157,7 +157,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test AJAX method detection without header or query parameter
      */
-    public function testIsAjaxWithoutHeaderOrQueryParameter()
+    public function testIsAjaxWithoutHeaderOrQueryParameter(): void
     {
         $env = \Slim\Environment::mock();
         $req = new \Slim\Http\Request($env);
@@ -168,7 +168,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test AJAX method detection with misspelled header
      */
-    public function testIsAjaxWithMisspelledHeader()
+    public function testIsAjaxWithMisspelledHeader(): void
     {
         $env = \Slim\Environment::mock(array(
             'X_REQUESTED_WITH' => 'foo'
@@ -181,7 +181,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test params from query string
      */
-    public function testParamsFromQueryString()
+    public function testParamsFromQueryString(): void
     {
         $env = \Slim\Environment::mock(array(
             'QUERY_STRING' => 'one=1&two=2&three=3'
@@ -196,7 +196,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test params from request body
      */
-    public function testParamsFromRequestBody()
+    public function testParamsFromRequestBody(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'POST',
@@ -213,7 +213,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test fetch GET params
      */
-    public function testGet()
+    public function testGet(): void
     {
         $env = \Slim\Environment::mock(array(
             'QUERY_STRING' => 'one=1&two=2&three=3'
@@ -228,7 +228,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test fetch GET params without multibyte
      */
-    public function testGetWithoutMultibyte()
+    public function testGetWithoutMultibyte(): void
     {
         $env = \Slim\Environment::mock(array(
             'QUERY_STRING' => 'one=1&two=2&three=3',
@@ -244,7 +244,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test fetch POST params
      */
-    public function testPost()
+    public function testPost(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'POST',
@@ -262,7 +262,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test fetch POST params without multibyte
      */
-    public function testPostWithoutMultibyte()
+    public function testPostWithoutMultibyte(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'POST',
@@ -281,9 +281,9 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test fetch POST without slim.input
      */
-    public function testPostWithoutInput()
+    public function testPostWithoutInput(): void
     {
-        $this->setExpectedException('RuntimeException');
+        self::expectException(\RuntimeException::class);
         $env = \Slim\Environment::mock();
         unset($env['slim.input']);
         $req = new \Slim\Http\Request($env);
@@ -293,7 +293,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test fetch POST params even if multipart/form-data request
      */
-    public function testPostWithMultipartRequest()
+    public function testPostWithMultipartRequest(): void
     {
         $_POST = array('foo' => 'bar'); //<-- Set by PHP
         $env = \Slim\Environment::mock(array(
@@ -311,7 +311,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test fetch PUT params
      */
-    public function testPut()
+    public function testPut(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'PUT',
@@ -330,7 +330,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test fetch PATCH params
      */
-    public function testPatch()
+    public function testPatch(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'PATCH',
@@ -349,7 +349,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test fetch DELETE params
      */
-    public function testDelete()
+    public function testDelete(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'DELETE',
@@ -368,7 +368,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test fetch COOKIE params
      */
-    public function testCookies()
+    public function testCookies(): void
     {
         $env = \Slim\Environment::mock(array(
             'HTTP_COOKIE' => 'foo=bar; abc=123'
@@ -382,7 +382,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test is form data
      */
-    public function testIsFormDataContentFormUrlencoded()
+    public function testIsFormDataContentFormUrlencoded(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'PUT',
@@ -396,7 +396,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test is form data
      */
-    public function testIsFormDataPostContentUnknown()
+    public function testIsFormDataPostContentUnknown(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'POST',
@@ -409,7 +409,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test is form data
      */
-    public function testIsFormDataPostContentUnknownWithMethodOverride()
+    public function testIsFormDataPostContentUnknownWithMethodOverride(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'PUT',
@@ -423,7 +423,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test is not form data
      */
-    public function testIsNotFormData()
+    public function testIsNotFormData(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.input' => '',
@@ -436,7 +436,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test headers
      */
-    public function testHeaders()
+    public function testHeaders(): void
     {
         $env = \Slim\Environment::mock(array(
             'HTTP_ACCEPT_ENCODING' => 'gzip'
@@ -458,7 +458,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test accurately removes HTTP_ prefix from input header name
      */
-    public function testHeaderRemovesHttpPrefix()
+    public function testHeaderRemovesHttpPrefix(): void
     {
         $env = \Slim\Environment::mock(array(
             'X_HTTP_METHOD_OVERRIDE' => 'PUT',
@@ -474,7 +474,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get body
      */
-    public function testGetBodyWhenExists()
+    public function testGetBodyWhenExists(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.input' => 'foo=bar&abc=123',
@@ -488,7 +488,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get body
      */
-    public function testGetBodyWhenNotExists()
+    public function testGetBodyWhenNotExists(): void
     {
         $env = \Slim\Environment::mock();
         $req = new \Slim\Http\Request($env);
@@ -498,7 +498,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get content type
      */
-    public function testGetContentTypeWhenExists()
+    public function testGetContentTypeWhenExists(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.input' => '',
@@ -511,7 +511,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get content type for built-in PHP server
      */
-    public function testGetContentTypeForBuiltInServer()
+    public function testGetContentTypeForBuiltInServer(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.input' => '',
@@ -524,7 +524,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get content type
      */
-    public function testGetContentTypeWhenNotExists()
+    public function testGetContentTypeWhenNotExists(): void
     {
         $env = \Slim\Environment::mock();
         $req = new \Slim\Http\Request($env);
@@ -534,7 +534,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get content type with built-in server
      */
-    public function testGetContentTypeWithBuiltInServer()
+    public function testGetContentTypeWithBuiltInServer(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.input' => '',
@@ -547,7 +547,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get media type
      */
-    public function testGetMediaTypeWhenExists()
+    public function testGetMediaTypeWhenExists(): void
     {
         $env = \Slim\Environment::mock(array(
             'CONTENT_TYPE' => 'application/json;charset=utf-8'
@@ -559,7 +559,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get media type
      */
-    public function testGetMediaTypeWhenNotExists()
+    public function testGetMediaTypeWhenNotExists(): void
     {
         $env = \Slim\Environment::mock();
         $req = new \Slim\Http\Request($env);
@@ -569,7 +569,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get media type
      */
-    public function testGetMediaTypeWhenNoParamsExist()
+    public function testGetMediaTypeWhenNoParamsExist(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.input' => '',
@@ -582,7 +582,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get media type params
      */
-    public function testGetMediaTypeParams()
+    public function testGetMediaTypeParams(): void
     {
         $env = \Slim\Environment::mock(array(
             'CONTENT_TYPE' => 'application/json; charset=ISO-8859-4'
@@ -597,7 +597,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get media type params
      */
-    public function testGetMediaTypeParamsWhenNotExists()
+    public function testGetMediaTypeParamsWhenNotExists(): void
     {
         $env = \Slim\Environment::mock();
         $req = new \Slim\Http\Request($env);
@@ -609,7 +609,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get content charset
      */
-    public function testGetContentCharset()
+    public function testGetContentCharset(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.input' => '',
@@ -622,7 +622,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get content charset
      */
-    public function testGetContentCharsetWhenNotExists()
+    public function testGetContentCharsetWhenNotExists(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.input' => '',
@@ -635,7 +635,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get content length
      */
-    public function testGetContentLength()
+    public function testGetContentLength(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.input' => 'foo=bar&abc=123',
@@ -649,7 +649,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get content length
      */
-    public function testGetContentLengthWhenNotExists()
+    public function testGetContentLengthWhenNotExists(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.input' => '',
@@ -661,7 +661,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get host
      */
-    public function testGetHost()
+    public function testGetHost(): void
     {
         $env = \Slim\Environment::mock(array(
             'SERVER_NAME' => 'slim',
@@ -674,7 +674,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get host if HTTP_HOST is an IPv6 address.
      */
-    public function testGetIPv6Host()
+    public function testGetIPv6Host(): void
     {
         $env = \Slim\Environment::mock(array(
             'SERVER_NAME' => 'slim',
@@ -688,7 +688,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get host if HTTP_HOST is an IPv6 address with appended port.
      */
-    public function testGetIPv6HostWithoutPortIfPortAppended()
+    public function testGetIPv6HostWithoutPortIfPortAppended(): void
     {
         $env = \Slim\Environment::mock(array(
             'SERVER_NAME' => 'slim',
@@ -702,7 +702,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get host when it has a port number
      */
-    public function testGetHostAndStripPort()
+    public function testGetHostAndStripPort(): void
     {
         $env = \Slim\Environment::mock(array(
             'SERVER_NAME' => 'slim',
@@ -715,7 +715,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get host
      */
-    public function testGetHostWhenNotExists()
+    public function testGetHostWhenNotExists(): void
     {
         $env = \Slim\Environment::mock(array(
             'SERVER_NAME' => 'slim',
@@ -729,7 +729,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get host with port
      */
-    public function testGetHostWithPort()
+    public function testGetHostWithPort(): void
     {
         $env = \Slim\Environment::mock(array(
             'HTTP_HOST' => 'slimframework.com',
@@ -744,7 +744,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get host with port doesn't duplicate port numbers
      */
-    public function testGetHostDoesntDuplicatePort()
+    public function testGetHostDoesntDuplicatePort(): void
     {
         $env = \Slim\Environment::mock(array(
             'HTTP_HOST' => 'slimframework.com:80',
@@ -759,7 +759,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get port
      */
-    public function testGetPort()
+    public function testGetPort(): void
     {
         $env = \Slim\Environment::mock(array(
             'SERVER_PORT' => 80
@@ -772,7 +772,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get scheme
      */
-    public function testGetSchemeIfHttp()
+    public function testGetSchemeIfHttp(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.url_scheme' => 'http'
@@ -784,7 +784,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get scheme
      */
-    public function testGetSchemeIfHttps()
+    public function testGetSchemeIfHttps(): void
     {
         $env = \Slim\Environment::mock(array(
             'slim.url_scheme' => 'https',
@@ -796,7 +796,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get [script name, root uri, path, path info, resource uri] in subdirectory without htaccess
      */
-    public function testAppPathsInSubdirectoryWithoutHtaccess()
+    public function testAppPathsInSubdirectoryWithoutHtaccess(): void
     {
         $env = \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/foo/index.php', //<-- Physical
@@ -813,7 +813,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get [script name, root uri, path, path info, resource uri] in subdirectory with htaccess
      */
-    public function testAppPathsInSubdirectoryWithHtaccess()
+    public function testAppPathsInSubdirectoryWithHtaccess(): void
     {
         $env = \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/foo', //<-- Physical
@@ -830,7 +830,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get [script name, root uri, path, path info, resource uri] in root directory without htaccess
      */
-    public function testAppPathsInRootDirectoryWithoutHtaccess()
+    public function testAppPathsInRootDirectoryWithoutHtaccess(): void
     {
         $env = \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php', //<-- Physical
@@ -847,7 +847,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get [script name, root uri, path, path info, resource uri] in root directory with htaccess
      */
-    public function testAppPathsInRootDirectoryWithHtaccess()
+    public function testAppPathsInRootDirectoryWithHtaccess(): void
     {
         $env = \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '', //<-- Physical
@@ -864,7 +864,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get URL
      */
-    public function testGetUrl()
+    public function testGetUrl(): void
     {
         $env = \Slim\Environment::mock(array(
             'HTTP_HOST' => 'slimframework.com',
@@ -879,7 +879,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get URL
      */
-    public function testGetUrlWithCustomPort()
+    public function testGetUrlWithCustomPort(): void
     {
         $env = \Slim\Environment::mock(array(
             'HTTP_HOST' => 'slimframework.com',
@@ -894,7 +894,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get URL
      */
-    public function testGetUrlWithHttps()
+    public function testGetUrlWithHttps(): void
     {
         $env = \Slim\Environment::mock(array(
             'HTTP_HOST' => 'slimframework.com',
@@ -910,14 +910,14 @@ class RequestTest extends PHPUnit_Framework_TestCase
      * Test get IP
      *  @dataProvider dataTestIp
      */
-    public function testGetIp(array $server, $expected)
+    public function testGetIp(array $server, $expected): void
     {
         $env = \Slim\Environment::mock($server);
         $req = new \Slim\Http\Request($env);
         $this->assertEquals($expected, $req->getIp());
     }
 
-    public function dataTestIp()
+    public function dataTestIp(): array
     {
         return array(
                 array(array('REMOTE_ADDR' => '127.0.0.1'), '127.0.0.1'),
@@ -931,7 +931,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get referer
      */
-    public function testGetReferrer()
+    public function testGetReferrer(): void
     {
         $env = \Slim\Environment::mock(array(
             'HTTP_REFERER' => 'http://foo.com'
@@ -944,7 +944,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get referer
      */
-    public function testGetReferrerWhenNotExists()
+    public function testGetReferrerWhenNotExists(): void
     {
         $env = \Slim\Environment::mock();
         $req = new \Slim\Http\Request($env);
@@ -955,7 +955,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get user agent string
      */
-    public function testGetUserAgent()
+    public function testGetUserAgent(): void
     {
         $env = \Slim\Environment::mock(array(
             'HTTP_USER_AGENT' => 'user-agent-string'
@@ -967,7 +967,7 @@ class RequestTest extends PHPUnit_Framework_TestCase
     /**
      * Test get user agent string when not set
      */
-    public function testGetUserAgentWhenNotExists()
+    public function testGetUserAgentWhenNotExists(): void
     {
         $env = \Slim\Environment::mock();
         unset($env['HTTP_USER_AGENT']);

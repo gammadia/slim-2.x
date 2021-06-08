@@ -30,12 +30,12 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class PrettyExceptionsTest extends PHPUnit_Framework_TestCase
+class PrettyExceptionsTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Test middleware returns successful response unchanged
      */
-    public function testReturnsUnchangedSuccessResponse()
+    public function testReturnsUnchangedSuccessResponse(): void
     {
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',
@@ -56,7 +56,7 @@ class PrettyExceptionsTest extends PHPUnit_Framework_TestCase
     /**
      * Test middleware returns diagnostic screen for error response
      */
-    public function testReturnsDiagnosticsForErrorResponse()
+    public function testReturnsDiagnosticsForErrorResponse(): void
     {
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',
@@ -79,7 +79,7 @@ class PrettyExceptionsTest extends PHPUnit_Framework_TestCase
     /**
      * Test middleware overrides response content type to html
      */
-    public function testResponseContentTypeIsOverriddenToHtml()
+    public function testResponseContentTypeIsOverriddenToHtml(): void
     {
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',
@@ -103,7 +103,7 @@ class PrettyExceptionsTest extends PHPUnit_Framework_TestCase
     /**
      * Test exception type is in response body
      */
-    public function testExceptionTypeIsInResponseBody()
+    public function testExceptionTypeIsInResponseBody(): void
     {
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',
@@ -120,15 +120,15 @@ class PrettyExceptionsTest extends PHPUnit_Framework_TestCase
         $mw->setNextMiddleware($app);
         $mw->call();
 
-        $this->assertContains('LogicException', $app->response()->body());
+        $this->assertStringContainsString('LogicException', $app->response()->body());
     }
 
     /**
      * Test with custom log
      */
-    public function testWithCustomLogWriter()
+    public function testWithCustomLogWriter(): void
     {
-        $this->setExpectedException('\LogicException');
+        self::expectException(\LogicException::class);
 
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',

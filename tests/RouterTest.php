@@ -30,12 +30,12 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class RouterTest extends PHPUnit_Framework_TestCase
+class RouterTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Constructor should initialize routes as empty array
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $router = new \Slim\Router();
 
@@ -45,7 +45,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
     /**
      * Map should set and return instance of \Slim\Route
      */
-    public function testMap()
+    public function testMap(): void
     {
         $router = new \Slim\Router();
         $route = new \Slim\Route('/foo', function() {});
@@ -57,7 +57,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
     /**
      * Named route should be added and indexed by name
      */
-    public function testAddNamedRoute()
+    public function testAddNamedRoute(): void
     {
         $router = new \Slim\Router();
         $route = new \Slim\Route('/foo', function () {});
@@ -73,9 +73,9 @@ class RouterTest extends PHPUnit_Framework_TestCase
     /**
      * Named route should have unique name
      */
-    public function testAddNamedRouteWithDuplicateKey()
+    public function testAddNamedRouteWithDuplicateKey(): void
     {
-        $this->setExpectedException('RuntimeException');
+        self::expectException(\RuntimeException::class);
 
         $router = new \Slim\Router();
         $route = new \Slim\Route('/foo', function () {});
@@ -86,7 +86,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
     /**
      * Router should return named route by name, or null if not found
      */
-    public function testGetNamedRoute()
+    public function testGetNamedRoute(): void
     {
         $router = new \Slim\Router();
         $route = new \Slim\Route('/foo', function () {});
@@ -102,7 +102,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
     /**
      * Router should determine named routes and cache results
      */
-    public function testGetNamedRoutes()
+    public function testGetNamedRoutes(): void
     {
         $router = new \Slim\Router();
         $route1 = new \Slim\Route('/foo', function () {});
@@ -131,7 +131,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
     /**
      * Router should detect presence of a named route by name
      */
-    public function testHasNamedRoute()
+    public function testHasNamedRoute(): void
     {
         $router = new \Slim\Router();
         $route = new \Slim\Route('/foo', function () {});
@@ -147,7 +147,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
     /**
      * Router should return current route if set during iteration
      */
-    public function testGetCurrentRoute()
+    public function testGetCurrentRoute(): void
     {
         $router = new \Slim\Router();
         $route = new \Slim\Route('/foo', function () {});
@@ -162,7 +162,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
     /**
      * Router should return first matching route if current route not set yet by iteration
      */
-    public function testGetCurrentRouteIfMatchedRoutes()
+    public function testGetCurrentRouteIfMatchedRoutes(): void
     {
         $router = new \Slim\Router();
         $route = new \Slim\Route('/foo', function () {});
@@ -181,7 +181,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
     /**
      * Router should return `null` if current route not set yet and there are no matching routes
      */
-    public function testGetCurrentRouteIfNoMatchedRoutes()
+    public function testGetCurrentRouteIfNoMatchedRoutes(): void
     {
         $router = new \Slim\Router();
 
@@ -196,7 +196,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
         $this->assertNull($router->getCurrentRoute());
     }
 
-    public function testGetMatchedRoutes()
+    public function testGetMatchedRoutes(): void
     {
         $router = new \Slim\Router();
 
@@ -219,7 +219,7 @@ class RouterTest extends PHPUnit_Framework_TestCase
 
     // Test url for named route
 
-    public function testUrlFor()
+    public function testUrlFor(): void
     {
         $router = new \Slim\Router();
 
@@ -240,9 +240,9 @@ class RouterTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('/path/Hello.Josh', $router->urlFor('regexRoute', array('foo' => 'Hello', 'bar' => 'Josh')));
     }
 
-    public function testUrlForIfNoSuchRoute()
+    public function testUrlForIfNoSuchRoute(): void
     {
-        $this->setExpectedException('RuntimeException');
+        self::expectException(\RuntimeException::class);
 
         $router = new \Slim\Router();
         $router->urlFor('foo', array('abc' => '123'));

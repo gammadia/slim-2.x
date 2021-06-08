@@ -35,9 +35,9 @@ class MyMiddleware extends \Slim\Middleware
     public function call() {}
 }
 
-class MiddlewareTest extends PHPUnit_Framework_TestCase
+class MiddlewareTest extends \PHPUnit\Framework\TestCase
 {
-    public function testSetApplication()
+    public function testSetApplication(): void
     {
         $app = new stdClass();
         $mw = new MyMiddleware();
@@ -46,7 +46,7 @@ class MiddlewareTest extends PHPUnit_Framework_TestCase
         $this->assertAttributeSame($app, 'app', $mw);
     }
 
-    public function testGetApplication()
+    public function testGetApplication(): void
     {
         $app = new stdClass();
         $mw = new MyMiddleware();
@@ -57,7 +57,7 @@ class MiddlewareTest extends PHPUnit_Framework_TestCase
         $this->assertSame($app, $mw->getApplication());
     }
 
-    public function testSetNextMiddleware()
+    public function testSetNextMiddleware(): void
     {
         $mw1 = new MyMiddleware();
         $mw2 = new MyMiddleware();
@@ -66,7 +66,7 @@ class MiddlewareTest extends PHPUnit_Framework_TestCase
         $this->assertAttributeSame($mw2, 'next', $mw1);
     }
 
-    public function testGetNextMiddleware()
+    public function testGetNextMiddleware(): void
     {
         $mw1 = new MyMiddleware();
         $mw2 = new MyMiddleware();

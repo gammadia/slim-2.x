@@ -30,9 +30,9 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class LogWriterTest extends PHPUnit_Framework_TestCase
+class LogWriterTest extends \PHPUnit\Framework\TestCase
 {
-    public function testInstantiation()
+    public function testInstantiation(): void
     {
         $this->expectOutputString('Hello!' . PHP_EOL);
         $handle = fopen('php://output', 'w');
@@ -40,9 +40,9 @@ class LogWriterTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($fw->write('Hello!') > 0); //<-- Returns number of bytes written if successful
     }
 
-    public function testInstantiationWithNonResource()
+    public function testInstantiationWithNonResource(): void
     {
-        $this->setExpectedException('InvalidArgumentException');
+        self::expectException(\InvalidArgumentException::class);
         $fw = new \Slim\LogWriter(@fopen('/foo/bar.txt', 'w'));
     }
 }

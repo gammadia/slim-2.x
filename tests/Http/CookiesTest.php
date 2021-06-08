@@ -29,9 +29,9 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-class CookiesTest extends PHPUnit_Framework_TestCase
+class CookiesTest extends \PHPUnit\Framework\TestCase
 {
-    public function testSetWithStringValue()
+    public function testSetWithStringValue(): void
     {
         $c = new \Slim\Http\Cookies();
         $c->set('foo', 'bar');
@@ -51,7 +51,7 @@ class CookiesTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    public function testSetWithArrayValue()
+    public function testSetWithArrayValue(): void
     {
         $now = time();
         $c = new \Slim\Http\Cookies();
@@ -79,7 +79,7 @@ class CookiesTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    public function testRemove()
+    public function testRemove(): void
     {
         $c = new \Slim\Http\Cookies();
         $c->remove('foo');

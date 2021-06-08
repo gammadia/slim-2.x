@@ -30,9 +30,9 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class ViewTest extends PHPUnit_Framework_TestCase
+class ViewTest extends \PHPUnit\Framework\TestCase
 {
-    public function testGetDataAll()
+    public function testGetDataAll(): void
     {
         $view = new \Slim\View();
         $prop = new \ReflectionProperty($view, 'data');
@@ -42,7 +42,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertSame(array('foo' => 'bar'), $view->getData());
     }
 
-    public function testGetDataKeyExists()
+    public function testGetDataKeyExists(): void
     {
         $view = new \Slim\View();
         $prop = new \ReflectionProperty($view, 'data');
@@ -52,7 +52,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('bar', $view->getData('foo'));
     }
 
-    public function testGetDataKeyNotExists()
+    public function testGetDataKeyNotExists(): void
     {
         $view = new \Slim\View();
         $prop = new \ReflectionProperty($view, 'data');
@@ -62,7 +62,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertNull($view->getData('abc'));
     }
 
-    public function testSetDataKeyValue()
+    public function testSetDataKeyValue(): void
     {
         $view = new \Slim\View();
         $prop = new \ReflectionProperty($view, 'data');
@@ -72,7 +72,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('foo' => 'bar'), $prop->getValue($view)->all());
     }
 
-    public function testSetDataKeyValueAsClosure()
+    public function testSetDataKeyValueAsClosure(): void
     {
         $view = new \Slim\View();
         $prop = new \ReflectionProperty($view, 'data');
@@ -87,7 +87,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('foo', $value());
     }
 
-    public function testSetDataArray()
+    public function testSetDataArray(): void
     {
         $view = new \Slim\View();
         $prop = new \ReflectionProperty($view, 'data');
@@ -97,15 +97,15 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('foo' => 'bar'), $prop->getValue($view)->all());
     }
 
-    public function testSetDataInvalidArgument()
+    public function testSetDataInvalidArgument(): void
     {
-        $this->setExpectedException('InvalidArgumentException');
+        self::expectException(\InvalidArgumentException::class);
 
         $view = new \Slim\View();
         $view->setData('foo');
     }
 
-    public function testAppendData()
+    public function testAppendData(): void
     {
         $view = new \Slim\View();
         $prop = new \ReflectionProperty($view, 'data');
@@ -115,7 +115,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('foo' => 'bar'), $prop->getValue($view)->all());
     }
 
-    public function testLocalData()
+    public function testLocalData(): void
     {
         $view = new \Slim\View();
         $prop1 = new \ReflectionProperty($view, 'data');
@@ -130,7 +130,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('test output baz', $output);
     }
 
-    public function testAppendDataOverwrite()
+    public function testAppendDataOverwrite(): void
     {
         $view = new \Slim\View();
         $prop = new \ReflectionProperty($view, 'data');
@@ -141,15 +141,15 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('foo' => '123'), $prop->getValue($view)->all());
     }
 
-    public function testAppendDataInvalidArgument()
+    public function testAppendDataInvalidArgument(): void
     {
-        $this->setExpectedException('InvalidArgumentException');
+        self::expectException(\InvalidArgumentException::class);
 
         $view = new \Slim\View();
         $view->appendData('foo');
     }
 
-    public function testGetTemplatesDirectory()
+    public function testGetTemplatesDirectory(): void
     {
         $view = new \Slim\View();
         $property = new \ReflectionProperty($view, 'templatesDirectory');
@@ -159,7 +159,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('templates', $view->getTemplatesDirectory());
     }
 
-    public function testSetTemplatesDirectory()
+    public function testSetTemplatesDirectory(): void
     {
         $view = new \Slim\View();
         $directory = 'templates' . DIRECTORY_SEPARATOR;
@@ -168,7 +168,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $this->assertAttributeEquals('templates', 'templatesDirectory', $view);
     }
 
-    public function testDisplay()
+    public function testDisplay(): void
     {
         $this->expectOutputString('test output bar');
 
@@ -184,9 +184,9 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $view->display('test.php');
     }
 
-    public function testDisplayTemplateThatDoesNotExist()
+    public function testDisplayTemplateThatDoesNotExist(): void
     {
-        $this->setExpectedException('\RuntimeException');
+        self::expectException(\RuntimeException::class);
 
         $view = new \Slim\View();
 

@@ -30,7 +30,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class EnvironmentTest extends PHPUnit_Framework_TestCase
+class EnvironmentTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Default server settings assume the Slim app is installed
@@ -41,7 +41,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * These only provide a common baseline for the following
      * tests; tests are free to override these values.
      */
-    public function setUp()
+    protected function setUp(): void
     {
         $_SERVER['DOCUMENT_ROOT'] = '/var/www';
         $_SERVER['SCRIPT_FILENAME'] = '/var/www/foo/index.php';
@@ -63,7 +63,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * This should return the custom values where specified
      * and the default values otherwise.
      */
-    public function testMockEnvironment()
+    public function testMockEnvironment(): void
     {
         $env = \Slim\Environment::mock(array(
             'REQUEST_METHOD' => 'PUT'
@@ -79,7 +79,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
     /**
      * Test sets HTTP method
      */
-    public function testSetsHttpMethod()
+    public function testSetsHttpMethod(): void
     {
         $env = \Slim\Environment::getInstance(true);
         $this->assertEquals('GET', $env['REQUEST_METHOD']);
@@ -92,7 +92,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * URL Rewrite is disabled;
      * App installed in subdirectory;
      */
-    public function testParsesPathsWithoutUrlRewriteInSubdirectory()
+    public function testParsesPathsWithoutUrlRewriteInSubdirectory(): void
     {
         $env = \Slim\Environment::getInstance(true);
         $this->assertEquals('/bar/xyz', $env['PATH_INFO']);
@@ -106,7 +106,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * URL Rewrite is disabled;
      * App installed in root directory;
      */
-    public function testParsesPathsWithoutUrlRewriteInRootDirectory()
+    public function testParsesPathsWithoutUrlRewriteInRootDirectory(): void
     {
         $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
         $_SERVER['REQUEST_URI'] = '/index.php/bar/xyz';
@@ -124,7 +124,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * App installed in root directory;
      * Requested resource is "/";
      */
-    public function testParsesPathsWithoutUrlRewriteInRootDirectoryForAppRootUri()
+    public function testParsesPathsWithoutUrlRewriteInRootDirectoryForAppRootUri(): void
     {
         $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
         $_SERVER['REQUEST_URI'] = '/index.php';
@@ -142,7 +142,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * URL Rewrite enabled;
      * App installed in subdirectory;
      */
-    public function testParsesPathsWithUrlRewriteInSubdirectory()
+    public function testParsesPathsWithUrlRewriteInSubdirectory(): void
     {
         $_SERVER['SCRIPT_NAME'] = '/foo/index.php';
         $_SERVER['REQUEST_URI'] = '/foo/bar/xyz';
@@ -159,7 +159,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * URL Rewrite enabled;
      * App installed in root directory;
      */
-    public function testParsesPathsWithUrlRewriteInRootDirectory()
+    public function testParsesPathsWithUrlRewriteInRootDirectory(): void
     {
         $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
         $_SERVER['SCRIPT_NAME'] = '/index.php';
@@ -178,7 +178,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * App installed in root directory;
      * Requested resource is "/"
      */
-    public function testParsesPathsWithUrlRewriteInRootDirectoryForAppRootUri()
+    public function testParsesPathsWithUrlRewriteInRootDirectoryForAppRootUri(): void
     {
         $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
         $_SERVER['REQUEST_URI'] = '/';
@@ -195,7 +195,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * Pre-conditions:
      * $_SERVER['QUERY_STRING'] exists and is not empty;
      */
-    public function testParsesQueryString()
+    public function testParsesQueryString(): void
     {
         $env = \Slim\Environment::getInstance(true);
         $this->assertEquals('one=1&two=2&three=3', $env['QUERY_STRING']);
@@ -208,7 +208,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * $_SERVER['QUERY_STRING'] exists and is not empty;
      * URL Rewrite enabled;
      */
-    public function testRemovesQueryStringFromPathInfo()
+    public function testRemovesQueryStringFromPathInfo(): void
     {
         $_SERVER['SCRIPT_NAME'] = '/foo/index.php';
         $_SERVER['REQUEST_URI'] = '/foo/bar/xyz?one=1&two=2&three=3';
@@ -228,7 +228,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * the Slim application environment. This test ensures the
      * REQUEST_URI is used instead and parsed as expected.
      */
-    public function testPathInfoRetainsUrlEncodedCharacters()
+    public function testPathInfoRetainsUrlEncodedCharacters(): void
     {
         $_SERVER['SCRIPT_FILENAME'] = '/var/www/index.php';
         $_SERVER['SCRIPT_NAME'] = '/index.php';
@@ -243,7 +243,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * Pre-conditions:
      * $_SERVER['QUERY_STRING'] does not exist;
      */
-    public function testParsesQueryStringThatDoesNotExist()
+    public function testParsesQueryStringThatDoesNotExist(): void
     {
         unset($_SERVER['QUERY_STRING']);
         $env = \Slim\Environment::getInstance(true);
@@ -253,7 +253,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
     /**
      * Test SERVER_NAME is not empty
      */
-    public function testServerNameIsNotEmpty()
+    public function testServerNameIsNotEmpty(): void
     {
         $env = \Slim\Environment::getInstance(true);
         $this->assertFalse(empty($env['SERVER_NAME']));
@@ -262,7 +262,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
     /**
      * Test SERVER_PORT is not empty
      */
-    public function testServerPortIsNotEmpty()
+    public function testServerPortIsNotEmpty(): void
     {
         $env = \Slim\Environment::getInstance(true);
         $this->assertFalse(empty($env['SERVER_PORT']));
@@ -275,7 +275,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * HTTP_CONTENT_TYPE is sent with HTTP request;
      * HTTP_CONTENT_LENGTH is sent with HTTP request;
      */
-    public function testUnsetsContentTypeAndContentLength()
+    public function testUnsetsContentTypeAndContentLength(): void
     {
         $_SERVER['HTTP_CONTENT_LENGTH'] = 150;
         $env = \Slim\Environment::getInstance(true);
@@ -289,7 +289,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * CONTENT_TYPE, CONTENT_LENGTH, X_REQUESTED_WITH are sent in client HTTP request;
      * CONTENT_TYPE, CONTENT_LENGTH, X_REQUESTED_WITH are not empty;
      */
-    public function testSetsSpecialHeaders()
+    public function testSetsSpecialHeaders(): void
     {
         $_SERVER['CONTENT_TYPE'] = 'text/csv';
         $_SERVER['CONTENT_LENGTH'] = '100';
@@ -307,7 +307,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * X_HTTP_METHOD_OVERRIDE is sent in client HTTP request;
      * X_HTTP_METHOD_OVERRIDE is not empty;
      */
-    public function testSetsHttpMethodOverrideHeader() {
+    public function testSetsHttpMethodOverrideHeader(): void {
         $_SERVER['HTTP_X_HTTP_METHOD_OVERRIDE'] = 'DELETE';
         $env = \Slim\Environment::getInstance(true);
         $this->assertEquals('DELETE', $env['HTTP_X_HTTP_METHOD_OVERRIDE']);
@@ -319,7 +319,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * Pre-conditions:
      * $_SERVER['HTTPS'] is set to a non-empty value;
      */
-    public function testHttps()
+    public function testHttps(): void
     {
         $_SERVER['HTTPS'] = 1;
         $env = \Slim\Environment::getInstance(true);
@@ -332,7 +332,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * Pre-conditions:
      * $_SERVER['HTTPS'] is set to an empty value;
      */
-    public function testNotHttps()
+    public function testNotHttps(): void
     {
         $_SERVER['HTTPS'] = '';
         $env = \Slim\Environment::getInstance(true);
@@ -345,7 +345,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * Pre-conditions:
      * $_SERVER['HTTPS'] is set to "off";
      */
-    public function testNotHttpsIIS()
+    public function testNotHttpsIIS(): void
     {
         $_SERVER['HTTPS'] = 'off';
         $env = \Slim\Environment::getInstance(true);
@@ -359,7 +359,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
      * Input at php://input may only be read once; subsequent attempts
      * will return `false`; in which case, use an empty string.
      */
-    public function testInputIsEmptyString()
+    public function testInputIsEmptyString(): void
     {
         $env = \Slim\Environment::getInstance(true);
         $this->assertEquals('', $env['slim.input']);
@@ -368,7 +368,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase
     /**
      * Test valid resource handle to php://stdErr
      */
-    public function testErrorResource()
+    public function testErrorResource(): void
     {
         $env = \Slim\Environment::getInstance(true);
         $this->assertTrue(is_resource($env['slim.errors']));

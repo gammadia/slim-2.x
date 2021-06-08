@@ -461,11 +461,6 @@ parameters:
 			path: Slim/Http/Util.php
 
 		-
-			message: "#^Function get_magic_quotes_gpc not found\\.$#"
-			count: 1
-			path: Slim/Http/Util.php
-
-		-
 			message: "#^Method Slim\\\\Http\\\\Util\\:\\:decrypt\\(\\) has parameter \\$settings with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Slim/Http/Util.php

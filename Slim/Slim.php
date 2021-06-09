@@ -839,7 +839,7 @@ class Slim
     public function expires($time)
     {
         if (is_string($time)) {
-            $time = strtotime($time);
+            $time = (int) strtotime($time);
         }
         $this->response->headers->set('Expires', gmdate('D, d M Y H:i:s T', $time));
     }

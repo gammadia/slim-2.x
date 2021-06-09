@@ -56,6 +56,7 @@ class ContentTypesTest extends \PHPUnit\Framework\TestCase
         $s = new \Slim\Slim();
         $s->add(new \Slim\Middleware\ContentTypes());
         $s->run();
+        /** @var mixed[] $body */
         $body = $s->request()->getBody();
         $this->assertTrue(is_array($body));
         $this->assertEquals('bar', $body['foo']);
@@ -133,6 +134,7 @@ class ContentTypesTest extends \PHPUnit\Framework\TestCase
         $s = new \Slim\Slim();
         $s->add(new \Slim\Middleware\ContentTypes());
         $s->run();
+        /** @var mixed[] $body */
         $body = $s->request()->getBody();
         $this->assertTrue(is_array($body));
         $this->assertEquals(2, count($body));
@@ -155,6 +157,7 @@ class ContentTypesTest extends \PHPUnit\Framework\TestCase
         $s = new \Slim\Slim();
         $s->add(new \Slim\Middleware\ContentTypes());
         $s->run();
+        /** @var mixed[] $body */
         $body = $s->request()->getBody();
         $this->assertTrue(is_array($body));
         $this->assertEquals('bar', $body['foo']);

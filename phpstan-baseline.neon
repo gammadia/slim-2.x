@@ -131,17 +131,7 @@ parameters:
 			path: Slim/Http/Cookies.php
 
 		-
-			message: "#^Parameter \\#1 \\$string of function ucwords expects string, string\\|null given\\.$#"
-			count: 1
-			path: Slim/Http/Headers.php
-
-		-
 			message: "#^Cannot access offset 0 on array\\<int, string\\>\\|false\\.$#"
-			count: 1
-			path: Slim/Http/Request.php
-
-		-
-			message: "#^Cannot access offset int on array\\<int, string\\>\\|false\\.$#"
 			count: 1
 			path: Slim/Http/Request.php
 
@@ -152,11 +142,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$data of static method Slim\\\\Http\\\\Headers\\:\\:extract\\(\\) expects array, Slim\\\\Environment given\\.$#"
-			count: 1
-			path: Slim/Http/Request.php
-
-		-
-			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: Slim/Http/Request.php
 
@@ -346,11 +331,6 @@ parameters:
 			path: Slim/Http/Util.php
 
 		-
-			message: "#^Parameter \\#2 \\$timestamp of function gmdate expects int\\|null, int\\<min, \\-1\\>\\|int\\<1, max\\>\\|false given\\.$#"
-			count: 1
-			path: Slim/Http/Util.php
-
-		-
 			message: "#^Parameter \\#3 \\$value of static method Slim\\\\Http\\\\Util\\:\\:setCookieHeader\\(\\) expects string, array given\\.$#"
 			count: 1
 			path: Slim/Http/Util.php
@@ -402,26 +382,6 @@ parameters:
 
 		-
 			message: "#^Method Slim\\\\Middleware\\\\ContentTypes\\:\\:parseJson\\(\\) should return array\\|string but return statement is missing\\.$#"
-			count: 1
-			path: Slim/Middleware/ContentTypes.php
-
-		-
-			message: "#^Parameter \\#1 \\$stream of function fclose expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: Slim/Middleware/ContentTypes.php
-
-		-
-			message: "#^Parameter \\#1 \\$stream of function fgetcsv expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: Slim/Middleware/ContentTypes.php
-
-		-
-			message: "#^Parameter \\#1 \\$stream of function fseek expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: Slim/Middleware/ContentTypes.php
-
-		-
-			message: "#^Parameter \\#1 \\$stream of function fwrite expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: Slim/Middleware/ContentTypes.php
 
@@ -576,16 +536,6 @@ parameters:
 			path: Slim/Middleware/SessionCookie.php
 
 		-
-			message: "#^Parameter \\#1 \\$value of function session_cache_limiter expects string\\|null, false given\\.$#"
-			count: 1
-			path: Slim/Middleware/SessionCookie.php
-
-		-
-			message: "#^Parameter \\#2 \\$value of function ini_set expects string, int given\\.$#"
-			count: 1
-			path: Slim/Middleware/SessionCookie.php
-
-		-
 			message: "#^Parameter \\#2 \\$value of method Slim\\\\Slim\\:\\:setCookie\\(\\) expects string, string\\|false given\\.$#"
 			count: 1
 			path: Slim/Middleware/SessionCookie.php
@@ -632,11 +582,6 @@ parameters:
 
 		-
 			message: "#^Method Slim\\\\Route\\:\\:setPattern\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: Slim/Route.php
-
-		-
-			message: "#^Parameter \\#1 \\$callback of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
 			count: 1
 			path: Slim/Route.php
 
@@ -961,11 +906,6 @@ parameters:
 			path: Slim/Slim.php
 
 		-
-			message: "#^Parameter \\#2 \\$timestamp of function gmdate expects int\\|null, int\\|false given\\.$#"
-			count: 1
-			path: Slim/Slim.php
-
-		-
 			message: "#^Call to an undefined method Slim\\\\Helper\\\\Set\\:\\:keep\\(\\)\\.$#"
 			count: 1
 			path: Slim/View.php
@@ -1046,11 +986,6 @@ parameters:
 			path: tests/Http/RequestTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, array\\|string\\|null given\\.$#"
-			count: 1
-			path: tests/Http/RequestTest.php
-
-		-
 			message: "#^Parameter \\#1 \\$haystack of function strstr expects string, string\\|false given\\.$#"
 			count: 1
 			path: tests/Http/UtilTest.php
@@ -1096,22 +1031,7 @@ parameters:
 			path: tests/LogWriterTest.php
 
 		-
-			message: "#^Call to function is_array\\(\\) with string will always evaluate to false\\.$#"
-			count: 3
-			path: tests/Middleware/ContentTypesTest.php
-
-		-
 			message: "#^Cannot access property \\$book on string\\.$#"
-			count: 1
-			path: tests/Middleware/ContentTypesTest.php
-
-		-
-			message: "#^Offset 'foo' does not exist on string\\.$#"
-			count: 2
-			path: tests/Middleware/ContentTypesTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, string given\\.$#"
 			count: 1
 			path: tests/Middleware/ContentTypesTest.php
 
@@ -1257,11 +1177,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$time of method Slim\\\\Slim\\:\\:lastModified\\(\\) expects int, string given\\.$#"
-			count: 1
-			path: tests/SlimTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: tests/SlimTest.php
 

@@ -314,7 +314,7 @@ class Util
             }
             if (isset($value['expires'])) {
                 if (is_string($value['expires'])) {
-                    $timestamp = strtotime($value['expires']);
+                    $timestamp = (int) strtotime($value['expires']);
                 } else {
                     $timestamp = (int) $value['expires'];
                 }

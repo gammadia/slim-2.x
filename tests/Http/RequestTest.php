@@ -374,7 +374,9 @@ class RequestTest extends \PHPUnit\Framework\TestCase
             'HTTP_COOKIE' => 'foo=bar; abc=123'
         ));
         $req = new \Slim\Http\Request($env);
-        $this->assertEquals(2, count($req->cookies()));
+        /** @var countable $cookies */
+        $cookies = $req->cookies();
+        $this->assertEquals(2, count($cookies));
         $this->assertEquals('bar', $req->cookies('foo'));
         $this->assertNull($req->cookies('xyz'));
     }

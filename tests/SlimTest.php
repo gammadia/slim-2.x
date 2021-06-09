@@ -1551,6 +1551,7 @@ class SlimTest extends \PHPUnit\Framework\TestCase
         $callable2 = function () { echo "bar"; };
         $app->hook('test.hook.one', $callable1); //default is 10
         $app->hook('test.hook.one', $callable2, 8);
+        /** @var countable $hooks */
         $hooks = $app->getHooks();
         $this->assertEquals(7, count($hooks)); //6 default, 1 custom
         $app->applyHook('test.hook.one');

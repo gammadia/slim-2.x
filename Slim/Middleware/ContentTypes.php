@@ -165,6 +165,7 @@ class ContentTypes extends \Slim\Middleware
      */
     protected function parseCsv($input)
     {
+        /** @var resource $temp */
         $temp = fopen('php://memory', 'rw');
         fwrite($temp, $input);
         fseek($temp, 0);

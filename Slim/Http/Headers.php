@@ -95,9 +95,9 @@ class Headers extends \Slim\Helper\Set
     {
         $key = strtolower($key);
         $key = str_replace(array('-', '_'), ' ', $key);
-        $key = preg_replace('#^http #', '', $key);
+        $key = (string) preg_replace('#^http #', '', $key);
         $key = ucwords($key);
-        $key = str_replace(' ', '-', $key);
+        $key = (string) str_replace(' ', '-', $key);
 
         return $key;
     }

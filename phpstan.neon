@@ -8,7 +8,6 @@ parameters:
     paths:
         - 'Slim'
         - 'tests'
-    phpVersion: 80005
     reportUnmatchedIgnoredErrors: true
     checkFunctionNameCase: true
     checkUninitializedProperties: true

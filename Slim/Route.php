@@ -170,7 +170,9 @@ class Route
                 if ($obj === null) {
                     $obj = new $class;
                 }
-                return call_user_func_array(array($obj, $method), func_get_args());
+                /** @var callable $callback */
+                $callback = array($obj, $method);
+                return call_user_func_array($callback, func_get_args());
             };
         }
 

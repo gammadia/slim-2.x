@@ -7,43 +7,7 @@ on:
     pull_request:
 
 jobs:
-    qa:
-        runs-on: ubuntu-latest
-
-        steps:
-            -   name: Checkout
-                uses: actions/checkout@v2
-
-            -   name: Setup PHP
-                uses: shivammathur/setup-php@v2
-                with:
-                    coverage: "none"
-                    extensions: "pdo,sqlite,json,zip"
-                    ini-values: "memory_limit=-1"
-                    php-version: "8.0"
-
-            -   name: Get composer cache directory
-                id: composercache
-                run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-            -   name: Cache dependencies
-                uses: actions/cache@v2
-                with:
-                    path: ${{ steps.composercache.outputs.dir }}
-                    key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-                    restore-keys: ${{ runner.os }}-composer-
-
-            -   name: Install dependencies
-                run: composer install --prefer-dist --no-progress
-
-            -   name: Lint PHP files
-                run: vendor/bin/phplint
-
-            -   name: Run PHPStan
-                run: vendor/bin/phpstan
-
     build-test:
-        needs: [qa]
         runs-on: ubuntu-latest
 
         strategy:
@@ -58,9 +22,11 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     coverage: "none"
-                    extensions: "pdo,sqlite,json,zip"
                     ini-values: "memory_limit=-1"
                     php-version: "${{ matrix.php }}"
+                env:
+                    fail-fast: true
+                    update: true
 
             -   name: Get composer cache directory
                 id: composercache
@@ -76,5 +42,14 @@ jobs:
             -   name: Install dependencies
                 run: composer install --prefer-dist --no-progress
 
+            -   name: Validate composer.json
+                run: composer validate --strict
+
+            -   name: Lint PHP files
+                run: vendor/bin/phplint
+
+            -   name: Run PHPStan
+                run: vendor/bin/phpstan
+
             -   name: Run tests
-                run: vendor/bin/phpunit --coverage-text
+                run: vendor/bin/phpunit

@@ -28,6 +28,9 @@ jobs:
                     fail-fast: true
                     update: true
 
+            -   name: Validate composer.json
+                run: composer validate --strict
+
             -   name: Get composer cache directory
                 id: composercache
                 run: echo "::set-output name=dir::$(composer config cache-files-dir)"
@@ -41,9 +44,6 @@ jobs:
 
             -   name: Install dependencies
                 run: composer install --prefer-dist --no-progress
-
-            -   name: Validate composer.json
-                run: composer validate --strict
 
             -   name: Lint PHP files
                 run: vendor/bin/phplint

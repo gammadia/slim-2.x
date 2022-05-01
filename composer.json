@@ -19,8 +19,8 @@
         "php": "^7.2|^8.0"
     },
     "require-dev": {
-        "phpstan/phpstan": "^0.12",
-        "rector/rector": "^0.11",
+        "phpstan/phpstan": "^1.6",
+        "rector/rector": "^0.12",
         "phpunit/phpunit": "^8.5",
         "overtrue/phplint": "^2.4|^3.0"
     },

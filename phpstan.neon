@@ -4,6 +4,7 @@ includes:
 
 parameters:
     level: max
+    phpVersion: 80018 # 8.0.18
     tmpDir: 'var/cache/phpstan'
     paths:
         - 'Slim'

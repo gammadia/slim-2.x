@@ -1014,6 +1014,7 @@ class Slim
      * and the response will be sent as is to the HTTP client.
      *
      * @throws \Slim\Exception\Stop
+     * @return never
      */
     public function stop()
     {
@@ -1031,6 +1032,8 @@ class Slim
      *
      * @param  int      $status     The HTTP response status
      * @param  string   $message    The HTTP response body
+     *
+     * @return never
      */
     public function halt($status, $message = '')
     {
@@ -1096,6 +1099,8 @@ class Slim
      *
      * @param  string   $url        The destination URL
      * @param  int      $status     The HTTP redirect status code (optional)
+     *
+     * @return never
      */
     public function redirect($url, $status = 302)
     {

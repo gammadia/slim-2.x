@@ -435,7 +435,7 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
      * Helpers: Server Error?
      * @return bool
      */
-    public function isServerError()
+    public function isServerError(): bool
     {
         return $this->status >= 500 && $this->status < 600;
     }
@@ -448,7 +448,7 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Array Access: Offset Exists
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset) : bool
     {
         return isset($this->headers[$offset]);
     }
@@ -456,7 +456,7 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Array Access: Offset Get
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->headers[$offset];
     }
@@ -464,7 +464,7 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Array Access: Offset Set
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->headers[$offset] = $value;
     }
@@ -472,7 +472,7 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Array Access: Offset Unset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->headers[$offset]);
     }
@@ -483,7 +483,7 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
      *
      * Countable: Count
      */
-    public function count()
+    public function count(): int
     {
         return count($this->headers);
     }
@@ -499,7 +499,7 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
      *
      * @return \Slim\Http\Headers
      */
-    public function getIterator()
+    public function getIterator(): \Iterator
     {
         return $this->headers->getIterator();
     }

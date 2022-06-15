@@ -16,6 +16,41 @@ parameters:
 			path: Slim/Environment.php
 
 		-
+			message: "#^Parameter \\#1 \\$haystack of function strpos expects string, mixed given\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Parameter \\#1 \\$path of function dirname expects string, mixed given\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function rtrim expects string, mixed given\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function strlen expects string, mixed given\\.$#"
+			count: 2
+			path: Slim/Environment.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function substr expects string, mixed given\\.$#"
+			count: 2
+			path: Slim/Environment.php
+
+		-
+			message: "#^Parameter \\#2 \\$needle of function strpos expects string, mixed given\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
+			message: "#^Parameter \\#3 \\$subject of function str_replace expects array\\|string, mixed given\\.$#"
+			count: 1
+			path: Slim/Environment.php
+
+		-
 			message: "#^Property Slim\\\\Environment\\:\\:\\$properties type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Slim/Environment.php
@@ -413,16 +448,6 @@ parameters:
 		-
 			message: "#^Cannot cast mixed to int\\.$#"
 			count: 1
-			path: Slim/Http/Util.php
-
-		-
-			message: "#^Constant MCRYPT_MODE_CBC not found\\.$#"
-			count: 2
-			path: Slim/Http/Util.php
-
-		-
-			message: "#^Constant MCRYPT_RIJNDAEL_256 not found\\.$#"
-			count: 2
 			path: Slim/Http/Util.php
 
 		-
@@ -1526,6 +1551,11 @@ parameters:
 			path: Slim/Slim.php
 
 		-
+			message: "#^Parameter \\#1 \\$string of function rtrim expects string, mixed given\\.$#"
+			count: 1
+			path: Slim/Slim.php
+
+		-
 			message: "#^Parameter \\#1 \\$value of static method Slim\\\\Http\\\\Util\\:\\:decodeSecureCookie\\(\\) expects string, mixed given\\.$#"
 			count: 1
 			path: Slim/Slim.php
@@ -1582,11 +1612,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#4 \\$mode of static method Slim\\\\Http\\\\Util\\:\\:decodeSecureCookie\\(\\) expects int, mixed given\\.$#"
-			count: 1
-			path: Slim/Slim.php
-
-		-
-			message: "#^Property Slim\\\\Slim\\:\\:\\$apps type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: Slim/Slim.php
 
@@ -1741,16 +1766,6 @@ parameters:
 			path: tests/Http/RequestTest.php
 
 		-
-			message: "#^Constant MCRYPT_MODE_CBC not found\\.$#"
-			count: 4
-			path: tests/Http/UtilTest.php
-
-		-
-			message: "#^Constant MCRYPT_RIJNDAEL_256 not found\\.$#"
-			count: 4
-			path: tests/Http/UtilTest.php
-
-		-
 			message: "#^Parameter \\#1 \\$haystack of function strstr expects string, string\\|false given\\.$#"
 			count: 1
 			path: tests/Http/UtilTest.php
@@ -1814,6 +1829,11 @@ parameters:
 			message: "#^Cannot access property \\$book on string\\.$#"
 			count: 1
 			path: tests/Middleware/ContentTypesTest.php
+
+		-
+			message: "#^Cannot access offset 'foo' on mixed\\.$#"
+			count: 1
+			path: tests/Middleware/FlashTest.php
 
 		-
 			message: "#^Method CustomAppMethod\\:\\:call\\(\\) has no return type specified\\.$#"
@@ -1947,7 +1967,7 @@ parameters:
 
 		-
 			message: "#^Cannot access offset 'info' on mixed\\.$#"
-			count: 1
+			count: 2
 			path: tests/SlimTest.php
 
 		-

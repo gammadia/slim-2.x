@@ -60,7 +60,7 @@ class Slim
     public $container;
 
     /**
-     * @var array[\Slim]
+     * @var array<self>
      */
     protected static $apps = array();
 

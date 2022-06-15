@@ -361,11 +361,6 @@ parameters:
 			path: Slim/Http/Response.php
 
 		-
-			message: "#^Method Slim\\\\Http\\\\Response\\:\\:getIterator\\(\\) should return Slim\\\\Http\\\\Headers but returns Traversable\\<mixed, mixed\\>\\.$#"
-			count: 1
-			path: Slim/Http/Response.php
-
-		-
 			message: "#^Method Slim\\\\Http\\\\Response\\:\\:getLength\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: Slim/Http/Response.php

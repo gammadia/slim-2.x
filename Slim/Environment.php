@@ -191,7 +191,8 @@ class Environment implements \ArrayAccess, \IteratorAggregate
     /**
      * Array Access: Offset Get
      */
-    public function offsetGet($offset): mixed
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset)
     {
         if (isset($this->properties[$offset])) {
             return $this->properties[$offset];

@@ -165,7 +165,8 @@ class Flash extends \Slim\Middleware implements \ArrayAccess, \IteratorAggregate
     /**
      * Array Access: Offset Get
      */
-    public function offsetGet($offset): mixed
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset)
     {
         $messages = $this->getMessages();
 

@@ -456,7 +456,8 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Array Access: Offset Get
      */
-    public function offsetGet($offset): mixed
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset)
     {
         return $this->headers[$offset];
     }
@@ -497,7 +498,7 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
      * This returns the contained `\Slim\Http\Headers` instance which
      * is itself iterable.
      *
-     * @return \Slim\Http\Headers
+     * @return \Iterator<mixed>
      */
     public function getIterator(): \Iterator
     {

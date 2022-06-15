@@ -180,7 +180,8 @@ class Set implements \ArrayAccess, \Countable, \IteratorAggregate
         return $this->has($offset);
     }
 
-    public function offsetGet($offset): mixed
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset)
     {
         return $this->get($offset);
     }

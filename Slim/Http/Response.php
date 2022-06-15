@@ -435,7 +435,7 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
      * Helpers: Server Error?
      * @return bool
      */
-    public function isServerError(): bool
+    public function isServerError()
     {
         return $this->status >= 500 && $this->status < 600;
     }

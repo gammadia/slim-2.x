@@ -241,7 +241,7 @@ class Response implements \ArrayAccess, \Countable, \IteratorAggregate
         } else {
             $this->body .= (string)$body;
         }
-        $this->length = strlen($this->body);
+        $this->length = strlen($this->body ?? '');
 
         return $this->body;
     }

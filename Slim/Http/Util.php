@@ -97,8 +97,8 @@ class Util
 
         //Merge settings with defaults
         $defaults = array(
-            'algorithm' => MCRYPT_RIJNDAEL_256,
-            'mode' => MCRYPT_MODE_CBC
+            'algorithm' => 0,
+            'mode' => 0
         );
         $settings = array_merge($defaults, $settings);
 
@@ -147,8 +147,8 @@ class Util
 
         //Merge settings with defaults
         $defaults = array(
-            'algorithm' => MCRYPT_RIJNDAEL_256,
-            'mode' => MCRYPT_MODE_CBC
+            'algorithm' => 0,
+            'mode' => 0
         );
         $settings = array_merge($defaults, $settings);
 

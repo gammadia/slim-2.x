@@ -154,8 +154,8 @@ class SlimHttpUtilTest extends \PHPUnit\Framework\TestCase
         $value = 'foo';
         $expires = time() + 86400;
         $secret = 'password';
-        $algorithm = MCRYPT_RIJNDAEL_256;
-        $mode = MCRYPT_MODE_CBC;
+        $algorithm = 0;
+        $mode = 0;
         $encodedValue = \Slim\Http\Util::encodeSecureCookie($value, $expires, $secret, $algorithm, $mode);
         $decodedValue = \Slim\Http\Util::decodeSecureCookie($encodedValue, $secret, $algorithm, $mode);
 
@@ -186,8 +186,8 @@ class SlimHttpUtilTest extends \PHPUnit\Framework\TestCase
         $value = 'foo';
         $expires = time() - 100;
         $secret = 'password';
-        $algorithm = MCRYPT_RIJNDAEL_256;
-        $mode = MCRYPT_MODE_CBC;
+        $algorithm = 0;
+        $mode = 0;
         $encodedValue = \Slim\Http\Util::encodeSecureCookie($value, $expires, $secret, $algorithm, $mode);
         $decodedValue = \Slim\Http\Util::decodeSecureCookie($encodedValue, $secret, $algorithm, $mode);
         $this->assertFalse($decodedValue);
@@ -213,8 +213,8 @@ class SlimHttpUtilTest extends \PHPUnit\Framework\TestCase
         $value = 'foo';
         $expires = time() + 86400;
         $secret = 'password';
-        $algorithm = MCRYPT_RIJNDAEL_256;
-        $mode = MCRYPT_MODE_CBC;
+        $algorithm = 0;
+        $mode = 0;
         $encodedValue = \Slim\Http\Util::encodeSecureCookie($value, $expires, $secret, $algorithm, $mode);
         $encodedValueParts = explode('|', $encodedValue);
         $encodedValueParts[1] = $encodedValueParts[1] . 'changed';
@@ -389,8 +389,8 @@ class SlimHttpUtilTest extends \PHPUnit\Framework\TestCase
         $settings = array(
             'cookies.encrypt' => true,
             'cookies.secret_key' => 'secret',
-            'cookies.cipher' => MCRYPT_RIJNDAEL_256,
-            'cookies.cipher_mode' => MCRYPT_MODE_CBC
+            'cookies.cipher' => 0,
+            'cookies.cipher_mode' => 0
         );
 
         $cookies = new \Slim\Http\Cookies();
